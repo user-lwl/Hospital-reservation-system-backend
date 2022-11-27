@@ -53,4 +53,38 @@ public class DictController {
         dictService.importDictData(file);
         return Result.ok();
     }
+
+    /**
+     * 根据dictName和value查询
+     * @param dictCode dictCode
+     * @param value value
+     * @return 名字
+     */
+    @GetMapping("/getName/{dictCode}/{value}")
+    public String getName(@PathVariable String dictCode,
+                          @PathVariable String value) {
+        return dictService.getDictName(dictCode, value);
+    }
+
+    /**
+     * 根据value查询
+     * @param value value
+     * @return 名字
+     */
+    @GetMapping("/getName/{value}")
+    public String getName(@PathVariable String value) {
+        return dictService.getDictName("", value);
+    }
+
+    /**
+     * 根据dictCode获取下级节点
+     * @param dictCode dictCode
+     * @return Dict的List
+     */
+    @ApiOperation(value = "根据dictCode获取下级节点")
+    @GetMapping("/findByDictCode/{dictCode}")
+    public Result<List<Dict>> findByDictCode(@PathVariable String dictCode) {
+        List<Dict> list = dictService.findByDictCode(dictCode);
+        return Result.ok(list);
+    }
 }

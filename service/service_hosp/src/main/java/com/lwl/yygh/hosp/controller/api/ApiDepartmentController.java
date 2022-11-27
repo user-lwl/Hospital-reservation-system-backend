@@ -25,7 +25,7 @@ import java.util.Map;
  */
 @RequestMapping("/api/hosp")
 @RestController
-public class DepartmentController {
+public class ApiDepartmentController {
     @Resource
     private DepartmentService departmentService;
 

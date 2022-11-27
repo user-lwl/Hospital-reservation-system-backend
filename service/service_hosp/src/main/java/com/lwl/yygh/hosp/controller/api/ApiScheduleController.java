@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/hosp")
-public class ScheduleController {
+public class ApiScheduleController {
     @Resource
     private ScheduleService scheduleService;
 
