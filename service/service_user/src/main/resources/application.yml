@@ -1,0 +1,41 @@
+# 服务端口
+server:
+  port: 8203
+  # 服务名
+spring:
+  application:
+    name: service-user
+  
+  # 环境设置：dev、test、prod
+  profiles:
+    active: dev
+  
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_user?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root123
+  
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  
+  #配置mapper xml文件的路径
+mybatis-plus:
+  mapper-locations: classpath:mapper/xml/*.xml
+
+wx:
+  open:
+    app_id: xxx
+    app_secret: xxx
+    redirect_url: xxx
+yygh:
+  baseUrl: http://localhost:3000
