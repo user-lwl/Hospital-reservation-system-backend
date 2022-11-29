@@ -3,6 +3,7 @@ package com.lwl.yygh.hosp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lwl.yygh.model.hosp.HospitalSet;
+import com.lwl.yygh.vo.order.SignInfoVo;
 
 /**
 * @author user-lwl
@@ -17,4 +18,11 @@ public interface HospitalSetService extends IService<HospitalSet> {
      * @return 签名
      */
     String getSignKey(String hoscode);
+
+    /**
+     * 获取医院签名信息
+     * @param hoscode 医院编号
+     * @return 医院签名信息
+     */
+    SignInfoVo getSignInfoVo(String hoscode);
 }

@@ -7,7 +7,7 @@ import com.lwl.yygh.order.service.PaymentInfoService;
 import org.springframework.stereotype.Service;
 
 /**
-* @author HP
+* @author user-lwl
 * @description 针对表【payment_info(支付信息表)】的数据库操作Service实现
 * @createDate 2022-11-23 19:16:19
 */

@@ -44,11 +44,13 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
             return out(response, ResultCodeEnum.PERMISSION);
         }
 
-        Long userId = this.getUserId(request);
         //api接口，异步请求，校验用户必须登录
-        if(antPathMatcher.match("/api/**/auth/**", path) && StringUtils.isEmpty(userId)) {
-            ServerHttpResponse response = exchange.getResponse();
-            return out(response, ResultCodeEnum.LOGIN_AUTH);
+        if(antPathMatcher.match("/api/**/auth/**", path)) {
+            Long userId = this.getUserId(request);
+            if (StringUtils.isEmpty(userId)) {
+                ServerHttpResponse response = exchange.getResponse();
+                return out(response, ResultCodeEnum.LOGIN_AUTH);
+            }
         }
         return chain.filter(exchange);
     }
@@ -61,10 +63,10 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
     /**
      * api接口鉴权失败返回数据
      * @param response 响应
-     * @return
+     * @return 失败数据
      */
     private Mono<Void> out(ServerHttpResponse response, ResultCodeEnum resultCodeEnum) {
-        Result result = Result.build(null, resultCodeEnum);
+        Result<ServerHttpResponse> result = Result.build(null, resultCodeEnum);
         byte[] bits = JSON.toJSONString(result).getBytes(StandardCharsets.UTF_8);
         DataBuffer buffer = response.bufferFactory().wrap(bits);
         //指定编码，否则在浏览器中会中文乱码
@@ -75,7 +77,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
     /**
      * 获取当前登录用户id
      * @param request 请求
-     * @return
+     * @return 用户id
      */
     private Long getUserId(ServerHttpRequest request) {
         String token = "";

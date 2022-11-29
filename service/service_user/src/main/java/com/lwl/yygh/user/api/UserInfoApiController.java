@@ -1,4 +1,4 @@
-package com.lwl.yygh.user.controller;
+package com.lwl.yygh.user.api;
 
 import com.lwl.yygh.common.result.Result;
 import com.lwl.yygh.common.utils.AuthContextHolder;

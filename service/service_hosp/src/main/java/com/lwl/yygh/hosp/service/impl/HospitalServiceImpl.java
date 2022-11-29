@@ -95,7 +95,7 @@ public class HospitalServiceImpl implements HospitalService {
      */
     @Override
     public void updateStatus(String id, Integer status) {
-        Hospital hospital = hospitalRepository.findById(id).get();
+        Hospital hospital = hospitalRepository.findById(id).orElse(new Hospital());
         hospital.setStatus(status);
         hospital.setUpdateTime(new Date());
         hospitalRepository.save(hospital);
@@ -108,7 +108,7 @@ public class HospitalServiceImpl implements HospitalService {
      */
     @Override
     public Map<String, Object> getHospById(String id) {
-        Hospital hospital = this.setHospitalHosType(hospitalRepository.findById(id).get());
+        Hospital hospital = this.setHospitalHosType(hospitalRepository.findById(id).orElse(new Hospital()));
         Map<String, Object> result = new HashMap<>();
         result.put("hospital", hospital);
         result.put("bookingRule", hospital.getBookingRule());

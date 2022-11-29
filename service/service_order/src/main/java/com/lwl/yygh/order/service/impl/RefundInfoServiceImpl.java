@@ -7,7 +7,7 @@ import com.lwl.yygh.order.service.RefundInfoService;
 import org.springframework.stereotype.Service;
 
 /**
-* @author HP
+* @author user-lwl
 * @description 针对表【refund_info(退款信息表)】的数据库操作Service实现
 * @createDate 2022-11-23 19:16:23
 */

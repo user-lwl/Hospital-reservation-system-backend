@@ -39,3 +39,7 @@ wx:
     redirect_url: xxx
 yygh:
   baseUrl: http://localhost:3000
+
+#logging:
+#  level:
+#    root: debug
