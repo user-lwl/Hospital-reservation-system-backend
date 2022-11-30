@@ -1,6 +1,7 @@
 package com.lwl.yygh.order.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lwl.yygh.model.order.PaymentInfo;
 import com.lwl.yygh.model.order.RefundInfo;
 
 /**
@@ -9,5 +10,12 @@ import com.lwl.yygh.model.order.RefundInfo;
 * @createDate 2022-11-23 19:16:23
 */
 public interface RefundInfoService extends IService<RefundInfo> {
+
+    /**
+     * 保存退款记录
+     * @param paymentInfo paymentInfo
+     * @return 退款记录
+     */
+    RefundInfo saveRefundInfo(PaymentInfo paymentInfo);
 
 }

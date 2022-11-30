@@ -11,6 +11,7 @@
         <module>service_gateway</module>
         <module>service_client/service_user_client</module>
         <module>service_client/service_hosp_client</module>
+        <module>service_client/service_order_client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

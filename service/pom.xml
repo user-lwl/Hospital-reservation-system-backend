@@ -18,6 +18,8 @@
         <module>service_order</module>
         <module>service_msm</module>
         <module>service_oss</module>
+        <module>service_task</module>
+        <module>service_statistics</module>
     </modules>
 
     <properties>
@@ -73,7 +75,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-<!--        &lt;!&ndash; 流量控制 &ndash;&gt;-->
+        <!-- 流量控制 -->
 <!--        <dependency>-->
 <!--            <groupId>com.alibaba.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->

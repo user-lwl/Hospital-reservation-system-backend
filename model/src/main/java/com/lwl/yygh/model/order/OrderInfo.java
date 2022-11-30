@@ -263,36 +263,34 @@ public class OrderInfo extends BaseEntity implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", userId=").append(userId);
-        sb.append(", outTradeNo=").append(outTradeNo);
-        sb.append(", hoscode=").append(hoscode);
-        sb.append(", hosname=").append(hosname);
-        sb.append(", depcode=").append(depcode);
-        sb.append(", depname=").append(depname);
-        sb.append(", title=").append(title);
-        sb.append(", hosScheduleId=").append(hosScheduleId);
-        sb.append(", reserveDate=").append(reserveDate);
-        sb.append(", reserveTime=").append(reserveTime);
-        sb.append(", patientId=").append(patientId);
-        sb.append(", patientName=").append(patientName);
-        sb.append(", patientPhone=").append(patientPhone);
-        sb.append(", hosRecordId=").append(hosRecordId);
-        sb.append(", number=").append(number);
-        sb.append(", fetchTime=").append(fetchTime);
-        sb.append(", fetchAddress=").append(fetchAddress);
-        sb.append(", amount=").append(amount);
-        sb.append(", quitTime=").append(quitTime);
-        sb.append(", orderStatus=").append(orderStatus);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", isDeleted=").append(isDeleted);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return getClass().getSimpleName() +
+                " [" +
+                "Hash = " + hashCode() +
+                ", id=" + id +
+                ", userId=" + userId +
+                ", outTradeNo=" + outTradeNo +
+                ", hoscode=" + hoscode +
+                ", hosname=" + hosname +
+                ", depcode=" + depcode +
+                ", depname=" + depname +
+                ", title=" + title +
+                ", hosScheduleId=" + hosScheduleId +
+                ", reserveDate=" + reserveDate +
+                ", reserveTime=" + reserveTime +
+                ", patientId=" + patientId +
+                ", patientName=" + patientName +
+                ", patientPhone=" + patientPhone +
+                ", hosRecordId=" + hosRecordId +
+                ", number=" + number +
+                ", fetchTime=" + fetchTime +
+                ", fetchAddress=" + fetchAddress +
+                ", amount=" + amount +
+                ", quitTime=" + quitTime +
+                ", orderStatus=" + orderStatus +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isDeleted=" + isDeleted +
+                ", serialVersionUID=" + serialVersionUID +
+                "]";
     }
 }
